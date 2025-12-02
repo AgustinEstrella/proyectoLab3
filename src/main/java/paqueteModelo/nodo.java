@@ -1,9 +1,9 @@
-package miPila;
+package paqueteModelo;
 
 public class nodo
 {
-    private String info;
-    private nodo siguiente;
+     String info;
+     nodo siguiente;
 
     public nodo(String info) {
         this.info = info;
@@ -17,4 +17,5 @@ public class nodo
     public String getInfo() {
         return info;
     }
+
 }
