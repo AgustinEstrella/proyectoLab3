@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc33f798-95e7-4930-8915-8bd1cf54c1d1" name="Changes" comment="se rompio todo">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/4 en Linea/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/4 en Linea/main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/4 en Linea/paqueteControlador/controlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/4 en Linea/paqueteControlador/controlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/4 en Linea/paqueteModelo/Modelo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/4 en Linea/paqueteModelo/Modelo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/4 en Linea/paqueteModelo/jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/4 en Linea/paqueteModelo/jugador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/4 en Linea/paqueteVista/vistaLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/4 en Linea/paqueteVista/vistaLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/paqueteControlador/controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteControlador/controlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/paqueteModelo/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteModelo/Modelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/paqueteModelo/jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteModelo/jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaLogin.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaLogin.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaLogin.java" afterDir="false" />
-    </list>
+    <list default="true" id="cc33f798-95e7-4930-8915-8bd1cf54c1d1" name="Changes" comment="se rompio todo" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
