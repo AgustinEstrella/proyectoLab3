@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc33f798-95e7-4930-8915-8bd1cf54c1d1" name="Changes" comment="se rompio todo" />
+    <list default="true" id="cc33f798-95e7-4930-8915-8bd1cf54c1d1" name="Changes" comment="Lo arreglé. Falta rehacer el .form con lo ya hecho en el vistaLogin.java">
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaLogin.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaLogin.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaLogin.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +114,23 @@
       <option name="project" value="LOCAL" />
       <updated>1764734742860</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="se rompio todo">
+      <option name="closed" value="true" />
+      <created>1764737682636</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1764737682636</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Lo arreglé. Falta rehacer el .form con lo ya hecho en el vistaLogin.java">
+      <option name="closed" value="true" />
+      <created>1764737718950</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1764737718950</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,7 +160,8 @@
     <MESSAGE value="Se puede romper todo el GUI" />
     <MESSAGE value="Arreglé y terminé la pagina de login" />
     <MESSAGE value="se rompio todo" />
-    <option name="LAST_COMMIT_MESSAGE" value="se rompio todo" />
+    <MESSAGE value="Lo arreglé. Falta rehacer el .form con lo ya hecho en el vistaLogin.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lo arreglé. Falta rehacer el .form con lo ya hecho en el vistaLogin.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
