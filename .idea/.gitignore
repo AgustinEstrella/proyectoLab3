@@ -1,3 +1,28 @@
-# Default ignored files
-/shelf/
-/workspace.xml
+# ==== IntelliJ (lo que NO debe subirse) ====
+/.idea/workspace.xml
+/.idea/shelf/
+/.idea/copilot.data.migration.agent.xml
+/.idea/copilot.data.migration.ask.xml
+/.idea/copilot.data.migration.ask2agent.xml
+/.idea/copilot.data.migration.edit.xml
+
+# ==== IntelliJ (lo que sí se sube, por eso NO se ignora) ====
+#!.idea/misc.xml
+#!.idea/modules.xml
+#!.idea/uiDesigner.xml
+#!.idea/vcs.xml
+
+# ==== Archivos del GUI Designer ====
+#!*.form   # ¡NO ignorar los .form!
+
+# ==== Compilados ====
+/out/
+/build/
+*.class
+
+# ==== Archivos del sistema ====
+.DS_Store
+Thumbs.db
+
+# ==== Logs ====
+*.log

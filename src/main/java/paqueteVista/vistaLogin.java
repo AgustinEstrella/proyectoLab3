@@ -1,44 +1,64 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package paqueteVista;
-import javax.swing.*;
-import javax.swing.border.TitledBorder;
-import javax.swing.plaf.FontUIResource;
-import javax.swing.text.StyleContext;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Locale;
+import java.util.Objects;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 public class vistaLogin extends JFrame {
     private JPanel Ventana;
+    private JLabel textoLogin;
+    private JButton BtnIngresar;
+    private JTextArea lineaStatus;
+    private JLabel lineaTxt1;
+    private JLabel lineaTxt2;
     private JTextField txtNombre1;
     private JTextField txtNombre2;
-    private JButton btnIngresar;
-    private JLabel avisoEstado;
-//--------------------------------------------------//
+    private JScrollPane JScrollPane;
 
     public vistaLogin() {
-        setContentPane(Ventana);
+        this.setContentPane(this.Ventana);
+        this.setTitle("Login");
+        this.setDefaultCloseOperation(3);
+        this.pack();
+        this.setSize(600, 400);
+        this.setLocationRelativeTo((Component) null);
+        this.BtnIngresar.addActionListener(new ActionListener() {
+            {
+                Objects.requireNonNull(vistaLogin.this);
+            }
 
-        setTitle("Login - 4 en Raya");
-        setSize(400, 300);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
+            public void actionPerformed(ActionEvent e) {
+            }
+        });
     }
 
     public JButton getBtnIngresar() {
-        return btnIngresar;
+        return this.BtnIngresar;
     }
 
     public JTextField getTxtNombre2() {
-        return txtNombre2;
+        return this.txtNombre2;
     }
 
     public JTextField getTxtNombre1() {
-        return txtNombre1;
+        return this.txtNombre1;
     }
 
-    public JLabel getAvisoEstado() {
-        return avisoEstado;
+    public JTextArea getLineaStatus() {
+        return this.lineaStatus;
     }
 
     {
@@ -56,73 +76,7 @@ public class vistaLogin extends JFrame {
      * @noinspection ALL
      */
     private void $$$setupUI$$$() {
-        Ventana = new JPanel();
-        Ventana.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(5, 2, new Insets(0, 0, 0, 0), -1, -1));
-        Ventana.setBackground(new Color(-8742759));
-        Ventana.setForeground(new Color(-1576705));
-        Ventana.setPreferredSize(new Dimension(550, 400));
-        Ventana.setBorder(BorderFactory.createTitledBorder(null, "", TitledBorder.DEFAULT_JUSTIFICATION, TitledBorder.DEFAULT_POSITION, null, null));
-        final JLabel label1 = new JLabel();
-        label1.setBackground(new Color(-3875841));
-        label1.setEnabled(true);
-        Font label1Font = this.$$$getFont$$$("Consolas", Font.BOLD, 26, label1.getFont());
-        if (label1Font != null) label1.setFont(label1Font);
-        label1.setForeground(new Color(-1576449));
-        label1.setText("Ingreso de datos");
-        Ventana.add(label1, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 1, 2, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        txtNombre2 = new JTextField();
-        txtNombre2.setBackground(new Color(-4400164));
-        txtNombre2.setText("");
-        Ventana.add(txtNombre2, new com.intellij.uiDesigner.core.GridConstraints(2, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(100, -1), null, 0, false));
-        final JLabel label2 = new JLabel();
-        Font label2Font = this.$$$getFont$$$("Fira Code", -1, 20, label2.getFont());
-        if (label2Font != null) label2.setFont(label2Font);
-        label2.setForeground(new Color(-1707777));
-        label2.setText("Nombre Jugador 2");
-        Ventana.add(label2, new com.intellij.uiDesigner.core.GridConstraints(2, 0, 2, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        btnIngresar = new JButton();
-        btnIngresar.setText("Ingresar");
-        Ventana.add(btnIngresar, new com.intellij.uiDesigner.core.GridConstraints(4, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        txtNombre1 = new JTextField();
-        txtNombre1.setBackground(new Color(-4400164));
-        txtNombre1.setText("");
-        Ventana.add(txtNombre1, new com.intellij.uiDesigner.core.GridConstraints(1, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(100, -1), null, 0, false));
-        final JLabel label3 = new JLabel();
-        Font label3Font = this.$$$getFont$$$("Fira Code", -1, 20, label3.getFont());
-        if (label3Font != null) label3.setFont(label3Font);
-        label3.setForeground(new Color(-1510913));
-        label3.setText("Nombre Jugador 1");
-        Ventana.add(label3, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final JPanel panel1 = new JPanel();
+        panel1.setLayout(new BorderLayout(0, 0));
     }
-
-    /**
-     * @noinspection ALL
-     */
-    private Font $$$getFont$$$(String fontName, int style, int size, Font currentFont) {
-        if (currentFont == null) return null;
-        String resultName;
-        if (fontName == null) {
-            resultName = currentFont.getName();
-        } else {
-            Font testFont = new Font(fontName, Font.PLAIN, 10);
-            if (testFont.canDisplay('a') && testFont.canDisplay('1')) {
-                resultName = fontName;
-            } else {
-                resultName = currentFont.getName();
-            }
-        }
-        Font font = new Font(resultName, style >= 0 ? style : currentFont.getStyle(), size >= 0 ? size : currentFont.getSize());
-        boolean isMac = System.getProperty("os.name", "").toLowerCase(Locale.ENGLISH).startsWith("mac");
-        Font fontWithFallback = isMac ? new Font(font.getFamily(), font.getStyle(), font.getSize()) : new StyleContext().getFont(font.getFamily(), font.getStyle(), font.getSize());
-        return fontWithFallback instanceof FontUIResource ? fontWithFallback : new FontUIResource(fontWithFallback);
-    }
-
-    /**
-     * @noinspection ALL
-     */
-    public JComponent $$$getRootComponent$$$() {
-        return Ventana;
-    }
-
 }
-
