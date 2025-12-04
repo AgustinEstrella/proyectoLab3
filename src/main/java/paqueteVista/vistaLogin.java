@@ -5,6 +5,9 @@
 
 package paqueteVista;
 
+import com.intellij.uiDesigner.core.GridConstraints;
+import com.intellij.uiDesigner.core.GridLayoutManager;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,14 +33,6 @@ public class vistaLogin extends JFrame {
         this.pack();
         this.setSize(600, 400);
         this.setLocationRelativeTo((Component) null);
-        this.BtnIngresar.addActionListener(new ActionListener() {
-            {
-                Objects.requireNonNull(vistaLogin.this);
-            }
-
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
     }
 
     public JButton getBtnIngresar() {
@@ -73,7 +68,7 @@ public class vistaLogin extends JFrame {
      */
     private void $$$setupUI$$$() {
         Ventana = new JPanel();
-        Ventana.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(8, 6, new Insets(0, 0, 0, 0), -1, -1));
+        Ventana.setLayout(new GridLayoutManager(8, 6, new Insets(0, 0, 0, 0), -1, -1));
         Ventana.setBackground(new Color(-7693387));
         final JLabel label1 = new JLabel();
         label1.setEnabled(true);
@@ -81,37 +76,37 @@ public class vistaLogin extends JFrame {
         if (label1Font != null) label1.setFont(label1Font);
         label1.setForeground(new Color(-1511169));
         label1.setText("Login 4 en Linea");
-        Ventana.add(label1, new com.intellij.uiDesigner.core.GridConstraints(0, 0, 3, 6, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Ventana.add(label1, new GridConstraints(0, 0, 3, 6, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         lineaTxt1 = new JLabel();
         Font lineaTxt1Font = this.$$$getFont$$$("Consolas", Font.BOLD | Font.ITALIC, 16, lineaTxt1.getFont());
         if (lineaTxt1Font != null) lineaTxt1.setFont(lineaTxt1Font);
         lineaTxt1.setForeground(new Color(-1445121));
         lineaTxt1.setText("Ingrese el nombre del primer jugador");
-        Ventana.add(lineaTxt1, new com.intellij.uiDesigner.core.GridConstraints(3, 0, 1, 3, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Ventana.add(lineaTxt1, new GridConstraints(3, 0, 1, 3, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         lineaTxt2 = new JLabel();
         lineaTxt2.setEnabled(true);
         Font lineaTxt2Font = this.$$$getFont$$$("Consolas", Font.BOLD | Font.ITALIC, 16, lineaTxt2.getFont());
         if (lineaTxt2Font != null) lineaTxt2.setFont(lineaTxt2Font);
         lineaTxt2.setForeground(new Color(-1577217));
         lineaTxt2.setText("Ingrese el nombre del segundo jugador");
-        Ventana.add(lineaTxt2, new com.intellij.uiDesigner.core.GridConstraints(4, 0, 2, 3, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        Ventana.add(lineaTxt2, new GridConstraints(4, 0, 2, 3, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         txtNombre1 = new JTextField();
         txtNombre1.setBackground(new Color(-9009247));
         txtNombre1.setForeground(new Color(-16719617));
-        Ventana.add(txtNombre1, new com.intellij.uiDesigner.core.GridConstraints(3, 3, 1, 3, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        Ventana.add(txtNombre1, new GridConstraints(3, 3, 1, 3, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         txtNombre2 = new JTextField();
         txtNombre2.setBackground(new Color(-9009247));
         txtNombre2.setForeground(new Color(-16719617));
-        Ventana.add(txtNombre2, new com.intellij.uiDesigner.core.GridConstraints(4, 3, 2, 3, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        Ventana.add(txtNombre2, new GridConstraints(4, 3, 2, 3, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         lineaStatus = new JLabel();
         lineaStatus.setForeground(new Color(-1576705));
         lineaStatus.setText("");
-        Ventana.add(lineaStatus, new com.intellij.uiDesigner.core.GridConstraints(7, 0, 1, 6, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, 1, 1, null, null, null, 0, false));
+        Ventana.add(lineaStatus, new GridConstraints(7, 0, 1, 6, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, 1, 1, null, null, null, 0, false));
         BtnIngresar = new JButton();
         BtnIngresar.setBackground(new Color(-6902070));
         BtnIngresar.setHorizontalTextPosition(0);
         BtnIngresar.setText("Ingresar");
-        Ventana.add(BtnIngresar, new com.intellij.uiDesigner.core.GridConstraints(6, 0, 1, 6, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, 35), new Dimension(150, 35), 0, false));
+        Ventana.add(BtnIngresar, new GridConstraints(6, 0, 1, 6, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, 35), new Dimension(150, 35), 0, false));
     }
 
     /**

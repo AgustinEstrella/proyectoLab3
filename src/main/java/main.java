@@ -12,6 +12,7 @@ class main {
         Modelo modelo = new Modelo();
         vistaLogin vistaLoginJuego = new vistaLogin();
         new controlador(modelo, vistaLoginJuego);
+
         vistaLoginJuego.setVisible(true);
     }
 }
