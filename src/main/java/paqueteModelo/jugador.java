@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package paqueteModelo;
 
 public class jugador {
@@ -13,8 +8,8 @@ public class jugador {
         if (nombre != null && !nombre.isEmpty()) {
             if (nombre.length() > 20) {
                 throw new IllegalArgumentException("El nombre del jugador no puede exceder los 20 caracteres.");
-            } else if (nombre.matches(".*\\d.*")) {
-                throw new IllegalArgumentException("El nombre del jugador no puede contener números.");
+            } else if (!nombre.matches("[a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]+")) { //Evitar poner numeros o simbolos
+                throw new IllegalArgumentException("El nombre del jugador no puede contener números o simbolos.");
             } else {
                 this.nombre = nombre;
                 this.id = id;

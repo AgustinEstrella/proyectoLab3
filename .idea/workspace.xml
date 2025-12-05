@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc33f798-95e7-4930-8915-8bd1cf54c1d1" name="Changes" comment="Volvi a hacer el .form y funciona">
-      <change afterPath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaTablero.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaTablero.java" afterDir="false" />
+    <list default="true" id="cc33f798-95e7-4930-8915-8bd1cf54c1d1" name="Changes" comment="Hice una vez mas el tablero, esta vez mas ordenado y cargado a un arreglo en la vista">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/4 en Linea.iml" beforeDir="false" afterPath="$PROJECT_DIR$/4 en Linea.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/4 en Linea/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/4 en Linea/main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/4 en Linea/paqueteControlador/controlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/4 en Linea/paqueteControlador/controlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/4 en Linea/paqueteVista/vistaLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/4 en Linea/paqueteVista/vistaLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/4 en Linea/paqueteModelo/Modelo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/4 en Linea/paqueteModelo/Modelo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/4 en Linea/paqueteModelo/jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/4 en Linea/paqueteModelo/jugador.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/paqueteControlador/controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteControlador/controlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/paqueteModelo/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteModelo/Modelo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/paqueteModelo/jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteModelo/jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaTablero.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaTablero.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaTablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaTablero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,22 +64,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.main.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feature/Vista",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/Vista&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="cc33f798-95e7-4930-8915-8bd1cf54c1d1" name="Changes" comment="" />
@@ -144,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764773642050</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Hice una vez mas el tablero, esta vez mas ordenado y cargado a un arreglo en la vista">
+      <option name="closed" value="true" />
+      <created>1764892022547</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1764892022547</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,21 +184,8 @@
     <MESSAGE value="se rompio todo" />
     <MESSAGE value="Lo arreglé. Falta rehacer el .form con lo ya hecho en el vistaLogin.java" />
     <MESSAGE value="Volvi a hacer el .form y funciona" />
-    <option name="LAST_COMMIT_MESSAGE" value="Volvi a hacer el .form y funciona" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/paqueteVista/vistaLogin.java</url>
-          <line>115</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Hice una vez mas el tablero, esta vez mas ordenado y cargado a un arreglo en la vista" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hice una vez mas el tablero, esta vez mas ordenado y cargado a un arreglo en la vista" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

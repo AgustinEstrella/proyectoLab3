@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package paqueteModelo;
 
 import java.util.ArrayList;
@@ -10,53 +5,57 @@ import java.util.ArrayList;
 public class Modelo {
     private jugador Jugador1;
     private jugador Jugador2;
-    ArrayList<jugador> jugadores = new ArrayList();
     private jugador jugadorActual;
+
     private int[][] tablero = new int[6][7];
+
+    ArrayList<jugador> jugadores = new ArrayList();
     private ArrayList<int[]> coordenadasGanadoras = new ArrayList();
 
     public void crearJugadores(String nombre1, String nombre2) {
-        this.Jugador1 = new jugador(nombre1, 1);
-        this.Jugador2 = new jugador(nombre2, 2);
-        this.jugadores.add(this.Jugador1);
-        this.jugadores.add(this.Jugador2);
-        this.jugadorActual = (jugador)this.jugadores.get(0);
+        Jugador1 = new jugador(nombre1, 1);
+        Jugador2 = new jugador(nombre2, 2);
+        jugadores.add(this.Jugador1);
+        jugadores.add(this.Jugador2);
+        jugadorActual = jugadores.get(0);
     }
 
     public String getJugadorActual() {
-        return "Turno de " + this.jugadorActual.getNombre();
-    }
-
-    public void empezarPartida() {
-        this.tablero = new int[6][7];
+        return "Turno de " + jugadorActual.getNombre();
     }
 
     public int[][] getTablero() {
-        return this.tablero;
+        return tablero;
     }
 
     public void cambiarTurno() {
-        if (this.jugadorActual == this.jugadores.get(0)) {
-            this.jugadorActual = (jugador)this.jugadores.get(1);
+        if (jugadorActual == jugadores.get(0)) {
+            jugadorActual = jugadores.get(1);
         } else {
-            this.jugadorActual = (jugador)this.jugadores.get(0);
+            jugadorActual = jugadores.get(0);
         }
+    }
 
+    private int contadorTurnos;
+    public void empezarPartida() {
+        tablero = new int[6][7];
+        contadorTurnos = 0;
     }
 
     public boolean insertarFicha(int columna) {
         for(int fila = 5; fila >= 0; --fila) {
-            if (this.tablero[fila][columna] == 0) {
-                this.tablero[fila][columna] = this.jugadorActual.getId();
+            if (tablero[fila][columna] == 0) {
+                tablero[fila][columna] = jugadorActual.getId();
+
+                contadorTurnos++;
                 return true;
             }
         }
-
         return false;
     }
 
     public ArrayList<int[]> getCoordenadasGanadoras() {
-        return this.coordenadasGanadoras;
+        return coordenadasGanadoras;
     }
 
     public int hayGanador() {
@@ -102,5 +101,9 @@ public class Modelo {
         }
 
         return 0;
+    }
+
+    public boolean tableroLleno() {
+        return contadorTurnos >= 42;
     }
 }
