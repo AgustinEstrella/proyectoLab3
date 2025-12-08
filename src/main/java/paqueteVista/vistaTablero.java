@@ -1,8 +1,10 @@
 package paqueteVista;
 
+//librerias internas
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 
+//librerias
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.text.StyleContext;
@@ -120,6 +122,10 @@ public class vistaTablero extends JFrame {
     public JButton[] getBotonesColumna() {
         return botonesColumnas;
     }
+
+
+
+
 
 
     {

@@ -1,12 +1,16 @@
 package paqueteControlador;
 
+//librerias
+import java.util.ArrayList;
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import javax.swing.Timer;
 import javax.swing.JButton;
 
+//paquetes
 import paqueteModelo.Modelo;
 import paqueteVista.vistaLogin;
 import paqueteVista.vistaTablero;
@@ -41,6 +45,7 @@ public class controlador implements ActionListener {
 
                     vistaTableroJuego = new vistaTablero();
                     vistaTableroJuego.setVisible(true);
+                    modeloJuego.crearArchivoPartida();
 
                     vistaTableroJuego.creacionArrayTablero();
                     vistaTableroJuego.creacionArrayColumnas();
@@ -80,18 +85,16 @@ public class controlador implements ActionListener {
         vistaTableroJuego.getAvisoLlena().setText("");
 
         actualizarTablero();
+        modeloJuego.guardarJugada(columna, modeloJuego.getNombreJugadorActual());
 
         int ganadorId = modeloJuego.hayGanador();
 
         if (ganadorId != 0){
-            gestionarVictoria(ganadorId);
+            hayVictoria(ganadorId);
 
         } else if (modeloJuego.tableroLleno()) {
-            // CASO 2: Nadie ganó y no caben más fichas (NUEVO)
-            gestionarEmpate();
-
+            hayEmpate();
         } else {
-            // CASO 3: El juego continúa
             modeloJuego.cambiarTurno();
             vistaTableroJuego.getInfoTurno().setText(modeloJuego.getJugadorActual());
         }
@@ -120,9 +123,14 @@ public class controlador implements ActionListener {
         }
     }
 
-    private void gestionarEmpate() {
+    private void hayEmpate() {
         vistaTableroJuego.getInfoTurno().setText("¡HAY EMPATE! EL TABLERO ESTÁ LLENO");
         vistaTableroJuego.getInfoTurno().setForeground(Color.ORANGE);
+        Timer timer = new Timer(3000, event -> {
+            modeloJuego.cerraryMostrarArchivo(modeloJuego.getNombreJugadorActual());
+        });
+        timer.setRepeats(false);
+        timer.start();
 
         JButton[] botonesColumnas = vistaTableroJuego.getBotonesColumna();
         for (int i = 0; i < botonesColumnas.length; i++) {
@@ -130,10 +138,16 @@ public class controlador implements ActionListener {
         }
     }
 
-    private void gestionarVictoria(int ganadorId) {
+    private void hayVictoria(int ganadorId) {
         String mensajeVictoria = modeloJuego.getJugadorActual().replace("Turno de ", "EL GANADOR ES: ");
         vistaTableroJuego.getInfoTurno().setForeground(Color.GREEN);
         vistaTableroJuego.getInfoTurno().setText(mensajeVictoria);
+
+        Timer timer = new Timer(3000, event -> {
+            modeloJuego.cerraryMostrarArchivo(modeloJuego.getNombreJugadorActual());
+        });
+        timer.setRepeats(false);
+        timer.start();
 
         ArrayList<int[]> listaGanadora = modeloJuego.getCoordenadasGanadoras();
 

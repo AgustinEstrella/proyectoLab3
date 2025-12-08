@@ -1,6 +1,13 @@
 package paqueteModelo;
 
+//librerias
+import java.io.IOException;
 import java.util.ArrayList;
+import java.io.FileOutputStream;
+
+//Librerias horario
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Modelo {
     private jugador Jugador1;
@@ -9,7 +16,7 @@ public class Modelo {
 
     private int[][] tablero = new int[6][7];
 
-    ArrayList<jugador> jugadores = new ArrayList();
+    private ArrayList<jugador> jugadores = new ArrayList();
     private ArrayList<int[]> coordenadasGanadoras = new ArrayList();
 
     public void crearJugadores(String nombre1, String nombre2) {
@@ -23,7 +30,11 @@ public class Modelo {
     public String getJugadorActual() {
         return "Turno de " + jugadorActual.getNombre();
     }
+    public String getNombreJugadorActual() {
+        return jugadorActual.getNombre();
+    }
 
+    //metodos de funcionamiento del juego
     public int[][] getTablero() {
         return tablero;
     }
@@ -37,13 +48,14 @@ public class Modelo {
     }
 
     private int contadorTurnos;
+
     public void empezarPartida() {
         tablero = new int[6][7];
         contadorTurnos = 0;
     }
 
     public boolean insertarFicha(int columna) {
-        for(int fila = 5; fila >= 0; --fila) {
+        for (int fila = 5; fila >= 0; --fila) {
             if (tablero[fila][columna] == 0) {
                 tablero[fila][columna] = jugadorActual.getId();
 
@@ -54,6 +66,7 @@ public class Modelo {
         return false;
     }
 
+    //metodos de verificacion de resultados
     public ArrayList<int[]> getCoordenadasGanadoras() {
         return coordenadasGanadoras;
     }
@@ -61,8 +74,8 @@ public class Modelo {
     public int hayGanador() {
         this.coordenadasGanadoras.clear();
 
-        for(int fila = 0; fila < 6; ++fila) {
-            for(int columna = 0; columna < 7; ++columna) {
+        for (int fila = 0; fila < 6; ++fila) {
+            for (int columna = 0; columna < 7; ++columna) {
                 int ficha = this.tablero[fila][columna];
                 if (ficha != 0) {
                     if (columna <= 3 && ficha == this.tablero[fila][columna + 1] && ficha == this.tablero[fila][columna + 2] && ficha == this.tablero[fila][columna + 3]) {
@@ -105,5 +118,45 @@ public class Modelo {
 
     public boolean tableroLleno() {
         return contadorTurnos >= 42;
+    }
+
+    //metodos manejo archivos
+    pila log = new pila();
+    private FileOutputStream archivo;
+    private String rutaArchivo;
+
+    String fecha = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss"));
+    String nombreArchivo = "LogPartida" +fecha+".txt";
+
+    public void crearArchivoPartida() {
+        try {
+            rutaArchivo = nombreArchivo;
+            archivo = new FileOutputStream(rutaArchivo, true);
+        } catch (IOException e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
+
+    public void guardarJugada(int columna, String jugador) {
+        try {
+            columna = columna+1;
+            String info = (jugador+ " posicionó ficha en la columna ->" +columna+ "<-"+"\n");
+            log.insertar(info );
+            for (int i = 0; i < info.length(); i++) {
+                archivo.write((int) info.charAt(i));
+            }
+        } catch (IOException e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
+
+    public void cerraryMostrarArchivo(String quienGano) {
+        try {
+            archivo.write(("El ganador es: "+quienGano+ "\n").getBytes());
+            archivo.close(); //cierra la edicion del archivo
+            Runtime.getRuntime().exec("notepad \"" + rutaArchivo + "\"");
+        } catch (IOException e) {
+            System.err.println("Error: " + e.getMessage());
+        }
     }
 }

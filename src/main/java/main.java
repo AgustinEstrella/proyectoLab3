@@ -1,3 +1,4 @@
+//paquetes
 import paqueteControlador.controlador;
 import paqueteModelo.Modelo;
 import paqueteVista.vistaLogin;
