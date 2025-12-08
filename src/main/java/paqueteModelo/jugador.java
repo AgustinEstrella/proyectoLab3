@@ -8,8 +8,8 @@ public class jugador {
         if (nombre != null && !nombre.isEmpty()) {
             if (nombre.length() > 20) {
                 throw new IllegalArgumentException("El nombre del jugador no puede exceder los 20 caracteres.");
-            } else if (!nombre.matches("[a-zA-ZñÑáéíóúÁÉÍÓÚ\\s]+")) { //Evitar poner numeros o simbolos
-                throw new IllegalArgumentException("El nombre del jugador no puede contener números o simbolos");
+            } else if (!nombre.matches("[a-zA-ZñÑáéíóúÁÉÍÓÚ]+")) { //Evitar poner numeros o simbolos, tambien espacios
+                throw new IllegalArgumentException("El nombre del jugador no puede contener números o simbolos, ni espacios");
             } else {
                 this.nombre = nombre;
                 this.id = id;

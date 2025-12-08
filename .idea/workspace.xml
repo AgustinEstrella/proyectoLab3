@@ -6,13 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cc33f798-95e7-4930-8915-8bd1cf54c1d1" name="Changes" comment="Logica y vista terminada, solo falta implementar manejo de archivos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/4 en Linea/paqueteControlador/controlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/4 en Linea/paqueteControlador/controlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/4 en Linea/paqueteModelo/Modelo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/4 en Linea/paqueteModelo/Modelo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/4 en Linea/paqueteModelo/jugador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/4 en Linea/paqueteModelo/jugador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/paqueteControlador/controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteControlador/controlador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/paqueteModelo/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteModelo/Modelo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/paqueteModelo/jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteModelo/jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaLogin.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaLogin.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaTablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteVista/vistaTablero.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

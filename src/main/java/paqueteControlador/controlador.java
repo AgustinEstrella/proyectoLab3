@@ -3,12 +3,12 @@ package paqueteControlador;
 //librerias
 import java.util.ArrayList;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
-
 import java.awt.event.ActionListener;
-import javax.swing.Timer;
 import javax.swing.JButton;
+
+import javax.swing.Timer;
+import java.awt.Color;
 
 //paquetes
 import paqueteModelo.Modelo;
@@ -39,12 +39,13 @@ public class controlador implements ActionListener {
                 vistaLoginJuego.getLineaStatus().setForeground(new Color(0, 255, 0));
                 vistaLoginJuego.getLineaStatus().setText("Abriendo juego para " + nombre1 + " y " + nombre2);
 
-                //Aca entramos al tablero esperando 1 segundo para dar tiempo a leer la confirmacion
+                //aca entramos al tablero esperando 1 segundo
                 Timer timer = new Timer(1000, event -> {
                     vistaLoginJuego.dispose();
 
                     vistaTableroJuego = new vistaTablero();
                     vistaTableroJuego.setVisible(true);
+
                     modeloJuego.crearArchivoPartida();
 
                     vistaTableroJuego.creacionArrayTablero();
@@ -85,7 +86,7 @@ public class controlador implements ActionListener {
         vistaTableroJuego.getAvisoLlena().setText("");
 
         actualizarTablero();
-        modeloJuego.guardarJugada(columna, modeloJuego.getNombreJugadorActual());
+        modeloJuego.guardarJugadaEnArchivo(columna, modeloJuego.getNombreJugadorActual());
 
         int ganadorId = modeloJuego.hayGanador();
 
@@ -127,7 +128,7 @@ public class controlador implements ActionListener {
         vistaTableroJuego.getInfoTurno().setText("¡HAY EMPATE! EL TABLERO ESTÁ LLENO");
         vistaTableroJuego.getInfoTurno().setForeground(Color.ORANGE);
         Timer timer = new Timer(3000, event -> {
-            modeloJuego.cerraryMostrarArchivo(modeloJuego.getNombreJugadorActual());
+            modeloJuego.cerraryMostrarArchivo("NADIE! HUBO UN EMPATE");
         });
         timer.setRepeats(false);
         timer.start();

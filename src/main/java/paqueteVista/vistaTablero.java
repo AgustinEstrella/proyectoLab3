@@ -84,10 +84,7 @@ public class vistaTablero extends JFrame {
         return avisoLlena;
     }
 
-    public JPanel getSeleccionColumnas() {
-        return seleccionColumnas;
-    }
-
+    //tablero
     public JPanel getTablero() {
         return tablero;
     }
@@ -107,6 +104,12 @@ public class vistaTablero extends JFrame {
 
     public JButton[][] getBotonesTablero() {
         return botonesTablero;
+    }
+
+
+    //columnas
+    public JPanel getSeleccionColumnas() {
+        return seleccionColumnas;
     }
 
     private JButton[] botonesColumnas;

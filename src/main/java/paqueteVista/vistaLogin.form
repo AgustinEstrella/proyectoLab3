@@ -81,10 +81,14 @@
           </grid>
         </constraints>
         <properties>
+          <autoscrolls value="true"/>
           <background color="-6902070"/>
           <horizontalTextPosition value="0"/>
           <text value="Ingresar"/>
         </properties>
+        <clientProperties>
+          <html.disable class="java.lang.Boolean" value="false"/>
+        </clientProperties>
       </component>
     </children>
   </grid>

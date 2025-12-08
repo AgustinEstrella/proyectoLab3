@@ -20,6 +20,9 @@ public class Modelo {
     private ArrayList<int[]> coordenadasGanadoras = new ArrayList();
 
     public void crearJugadores(String nombre1, String nombre2) {
+        //if (nombre1.equalsIgnoreCase(nombre2)){
+        //    throw new IllegalArgumentException("Los jugadores no pueden tener el mismo nombre!");
+        //}  VERIFICACION DUDOSA, PARA CCONSIDERAR
         Jugador1 = new jugador(nombre1, 1);
         Jugador2 = new jugador(nombre2, 2);
         jugadores.add(this.Jugador1);
@@ -78,6 +81,7 @@ public class Modelo {
             for (int columna = 0; columna < 7; ++columna) {
                 int ficha = this.tablero[fila][columna];
                 if (ficha != 0) {
+                    //HORIZONTAL
                     if (columna <= 3 && ficha == this.tablero[fila][columna + 1] && ficha == this.tablero[fila][columna + 2] && ficha == this.tablero[fila][columna + 3]) {
                         this.coordenadasGanadoras.add(new int[]{fila, columna});
                         this.coordenadasGanadoras.add(new int[]{fila, columna + 1});
@@ -86,6 +90,7 @@ public class Modelo {
                         return ficha;
                     }
 
+                    //VERTICAL
                     if (fila <= 2 && ficha == this.tablero[fila + 1][columna] && ficha == this.tablero[fila + 2][columna] && ficha == this.tablero[fila + 3][columna]) {
                         this.coordenadasGanadoras.add(new int[]{fila, columna});
                         this.coordenadasGanadoras.add(new int[]{fila + 1, columna});
@@ -94,6 +99,7 @@ public class Modelo {
                         return ficha;
                     }
 
+                    //DIAGONAL ABAJO DERECHA
                     if (fila <= 2 && columna <= 3 && ficha == this.tablero[fila + 1][columna + 1] && ficha == this.tablero[fila + 2][columna + 2] && ficha == this.tablero[fila + 3][columna + 3]) {
                         this.coordenadasGanadoras.add(new int[]{fila, columna});
                         this.coordenadasGanadoras.add(new int[]{fila + 1, columna + 1});
@@ -102,6 +108,7 @@ public class Modelo {
                         return ficha;
                     }
 
+                    //DIAGONAL ARRIBA DERECHA
                     if (fila >= 3 && columna <= 3 && ficha == this.tablero[fila - 1][columna + 1] && ficha == this.tablero[fila - 2][columna + 2] && ficha == this.tablero[fila - 3][columna + 3]) {
                         this.coordenadasGanadoras.add(new int[]{fila, columna});
                         this.coordenadasGanadoras.add(new int[]{fila - 1, columna + 1});
@@ -137,7 +144,7 @@ public class Modelo {
         }
     }
 
-    public void guardarJugada(int columna, String jugador) {
+    public void guardarJugadaEnArchivo(int columna, String jugador) {
         try {
             columna = columna+1;
             String info = (jugador+ " posicionó ficha en la columna ->" +columna+ "<-"+"\n");
