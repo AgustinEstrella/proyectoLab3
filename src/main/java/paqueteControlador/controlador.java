@@ -14,12 +14,14 @@ import java.awt.Color;
 import paqueteModelo.Modelo;
 import paqueteVista.vistaLogin;
 import paqueteVista.vistaTablero;
+import paqueteLog.logPartida;
 
 public class controlador implements ActionListener {
 
     private Modelo modeloJuego;
     private vistaLogin vistaLoginJuego;
     private vistaTablero vistaTableroJuego;
+    private logPartida logsPartida;
 
     public controlador(Modelo modeloJuego, vistaLogin vistaLoginJuego) {
         this.modeloJuego = modeloJuego;
@@ -29,15 +31,13 @@ public class controlador implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vistaLoginJuego.getBtnIngresar()) {
-            this.vistaLoginJuego.getLineaStatus().setText("");
-
+            vistaLoginJuego.vaciarTextoLogin();
             try {
                 String nombre1 = vistaLoginJuego.getTxtNombre1().getText();
                 String nombre2 = vistaLoginJuego.getTxtNombre2().getText();
                 modeloJuego.crearJugadores(nombre1, nombre2);
 
-                vistaLoginJuego.getLineaStatus().setForeground(new Color(0, 255, 0));
-                vistaLoginJuego.getLineaStatus().setText("Abriendo juego para " + nombre1 + " y " + nombre2);
+                vistaLoginJuego.mostrarTextoLogin(nombre1, nombre2);
 
                 //aca entramos al tablero esperando 1 segundo
                 Timer timer = new Timer(1000, event -> {
@@ -46,7 +46,8 @@ public class controlador implements ActionListener {
                     vistaTableroJuego = new vistaTablero();
                     vistaTableroJuego.setVisible(true);
 
-                    modeloJuego.crearArchivoPartida();
+                    logsPartida = new logPartida();
+                    logsPartida.crearArchivoPartida();
 
                     vistaTableroJuego.creacionArrayTablero();
                     vistaTableroJuego.creacionArrayColumnas();
@@ -60,11 +61,12 @@ public class controlador implements ActionListener {
                 timer.start();
 
             } catch (IllegalArgumentException ex) {
-                vistaLoginJuego.getLineaStatus().setForeground(new Color(255, 0, 0));
-                vistaLoginJuego.getLineaStatus().setText(ex.getMessage());
+                vistaLoginJuego.mostrarExepcion(ex);
             }
         }
     }
+
+    //metodos de conexion
 
     public void agregarListenerColumnasYHacerMovimiento() {
         for (int i = 0; i < vistaTableroJuego.getBotonesColumna().length; ++i) {
@@ -79,14 +81,16 @@ public class controlador implements ActionListener {
         boolean confirmacion = modeloJuego.insertarFicha(columna);
 
         if (!confirmacion){
-            vistaTableroJuego.getAvisoLlena().setText("COLUMNA LLENA. VUELVA A INTENTARLO");
-            vistaTableroJuego.getAvisoLlena().setForeground(new Color(255, 0, 0));
+            vistaTableroJuego.ingresoFallido();
             return;
         }
-        vistaTableroJuego.getAvisoLlena().setText("");
 
-        actualizarTablero();
-        modeloJuego.guardarJugadaEnPila(columna, modeloJuego.getNombreJugadorActual());
+        vistaTableroJuego.vaciarTextoColumnaLlena();
+
+        vistaTableroJuego.pintarTablero(modeloJuego.getTablero());
+
+
+        logsPartida.guardarJugadaEnPila(columna, modeloJuego.getNombreJugadorActual());
 
         int ganadorId = modeloJuego.hayGanador();
 
@@ -102,33 +106,10 @@ public class controlador implements ActionListener {
 
     }
 
-    private void actualizarTablero() {
-        int[][] tablero = modeloJuego.getTablero();
-        JButton[][] botonera = vistaTableroJuego.getBotonesTablero();
-
-        for (int fila = 0; fila < 6; fila++) {
-            for (int columna = 0; columna < 7; columna++)
-            {
-                int valorCelda = tablero[fila][columna];
-
-                if (valorCelda == 1) {
-                    botonera[fila][columna].setBackground(Color.BLUE);
-                    botonera[fila][columna].setOpaque(true);
-                } else {
-                    if (valorCelda == 2) {
-                        botonera[fila][columna].setBackground(Color.YELLOW);
-                        botonera[fila][columna].setOpaque(true);
-                    }
-                }
-            }
-        }
-    }
-
     private void hayEmpate() {
-        vistaTableroJuego.getInfoTurno().setText("¡HAY EMPATE! EL TABLERO ESTÁ LLENO");
-        vistaTableroJuego.getInfoTurno().setForeground(Color.ORANGE);
+        vistaTableroJuego.mostrarTextoEmpate();
         Timer timer = new Timer(3000, event -> {
-            modeloJuego.cerraryMostrarArchivo("NADIE! HUBO UN EMPATE");
+            logsPartida.cerraryMostrarArchivo("NADIE! HUBO UN EMPATE");
         });
         timer.setRepeats(false);
         timer.start();
@@ -140,31 +121,17 @@ public class controlador implements ActionListener {
     }
 
     private void hayVictoria(int ganadorId) {
-        String mensajeVictoria = modeloJuego.getJugadorActual().replace("Turno de ", "EL GANADOR ES: ");
-        vistaTableroJuego.getInfoTurno().setForeground(Color.GREEN);
-        vistaTableroJuego.getInfoTurno().setText(mensajeVictoria);
+        vistaTableroJuego.mostrarVictoria(modeloJuego.getNombreJugadorActual());
 
         Timer timer = new Timer(3000, event -> {
-            modeloJuego.cerraryMostrarArchivo(modeloJuego.getNombreJugadorActual());
+            logsPartida.cerraryMostrarArchivo(modeloJuego.getNombreJugadorActual());
         });
         timer.setRepeats(false);
         timer.start();
 
         ArrayList<int[]> listaGanadora = modeloJuego.getCoordenadasGanadoras();
 
-        for (int i = 0; i < listaGanadora.size(); i++) {
-            int[] coordenada = listaGanadora.get(i);
-            int fila = coordenada[0];
-            int columna = coordenada[1];
-
-            vistaTableroJuego.getBotonesTablero()[fila][columna].setBackground(Color.GREEN);
-            vistaTableroJuego.getBotonesTablero()[fila][columna].setOpaque(true);
-        }
-
-        JButton[] botonesColumnas = vistaTableroJuego.getBotonesColumna();
-        for (int i = 0; i < botonesColumnas.length; i++) {
-            botonesColumnas[i].setEnabled(false);
-        }
+        vistaTableroJuego.mostrarFilaVictoriosa(listaGanadora);
     }
 
 }

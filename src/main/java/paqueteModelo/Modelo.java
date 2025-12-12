@@ -24,8 +24,8 @@ public class Modelo {
         //}  VERIFICACION DUDOSA, PARA CCONSIDERAR
         Jugador1 = new jugador(nombre1, 1);
         Jugador2 = new jugador(nombre2, 2);
-        jugadores.add(this.Jugador1);
-        jugadores.add(this.Jugador2);
+        jugadores.add(Jugador1);
+        jugadores.add(Jugador2);
         jugadorActual = jugadores.get(0);
     }
 
@@ -124,47 +124,8 @@ public class Modelo {
         return coordenadasGanadoras;
     }
 
-
     public boolean tableroLleno() {
         return contadorTurnos >= 42;
     }
 
-    //metodos manejo archivos
-    pila log = new pila();
-    private FileOutputStream archivo;
-
-    String fecha = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss"));
-    String nombreArchivo = "LogPartida" +fecha+".txt";
-
-    public void crearArchivoPartida() {
-        try {
-            archivo = new FileOutputStream(nombreArchivo, true);
-        } catch (IOException e) {
-            System.err.println("Error: " + e.getMessage());
-        }
-    }
-
-    public void guardarJugadaEnPila(int columna, String jugador) {
-        try {
-            columna = columna+1;
-            String info = (jugador+ " posicionó ficha en la columna ->" +columna+ "<-"+"\n");
-            log.insertar(info );
-        } catch (Exception e) {
-            System.err.println("Error: " + e.getMessage());
-        }
-    }
-
-    public void cerraryMostrarArchivo(String quienGano) {
-        try {
-            String info = log.imprimirPila();
-            for (int i = 0; i < info.length(); i++) {
-                archivo.write((int) info.charAt(i));
-            }
-            archivo.write(("El ganador es: "+quienGano+ "\n").getBytes());
-            archivo.close(); //cierra la edicion del archivo
-            Runtime.getRuntime().exec("notepad \"" + nombreArchivo + "\"");
-        } catch (IOException e) {
-            System.err.println("Error: " + e.getMessage());
-        }
-    }
 }

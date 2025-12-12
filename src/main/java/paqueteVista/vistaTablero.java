@@ -9,6 +9,7 @@ import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.text.StyleContext;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class vistaTablero extends JFrame {
@@ -127,8 +128,61 @@ public class vistaTablero extends JFrame {
     }
 
 
+    //todos estos tuve que cambiarlos aca porque los tenia mal puestos en el controaldor
+    public void pintarTablero(int[][] tablero) {
+        JButton[][] botonera = getBotonesTablero();
+        for (int fila = 0; fila < 6; fila++) {
+            for (int columna = 0; columna < 7; columna++) {
+                int valorCelda = tablero[fila][columna];
 
+                if (valorCelda == 1) {
+                    botonera[fila][columna].setBackground(Color.BLUE);
+                    botonera[fila][columna].setOpaque(true);
+                } else {
+                    if (valorCelda == 2) {
+                        botonera[fila][columna].setBackground(Color.YELLOW);
+                        botonera[fila][columna].setOpaque(true);
+                    }
+                }
+            }
+        }
+    }
 
+    public void mostrarVictoria(String jugador) {
+        String mensaje = "EL GANADOR ES: " + jugador;
+        infoTurno.setForeground(Color.GREEN);
+        infoTurno.setText(mensaje);
+    }
+
+    public void mostrarFilaVictoriosa(ArrayList<int[]> listaGanadora) {
+
+        for (int i = 0; i < listaGanadora.size(); i++) {
+            int[] coordenada = listaGanadora.get(i);
+            int fila = coordenada[0];
+            int columna = coordenada[1];
+            getBotonesTablero()[fila][columna].setBackground(Color.GREEN);
+            getBotonesTablero()[fila][columna].setOpaque(true);
+        }
+
+        JButton[] botonesColumnas = getBotonesColumna();
+        for (int i = 0; i < botonesColumnas.length; i++) {
+            botonesColumnas[i].setEnabled(false);
+        }
+    }
+
+    public void mostrarTextoEmpate() {
+        getInfoTurno().setText("¡HAY EMPATE! EL TABLERO ESTÁ LLENO");
+        getInfoTurno().setForeground(Color.ORANGE);
+    }
+
+    public void ingresoFallido() {
+        getAvisoLlena().setText("COLUMNA LLENA. VUELVA A INTENTARLO");
+        getAvisoLlena().setForeground(new Color(255, 0, 0));
+    }
+
+    public void vaciarTextoColumnaLlena() {
+        getAvisoLlena().setText("");
+    }
 
 
     {
