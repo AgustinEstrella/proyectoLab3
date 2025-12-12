@@ -86,7 +86,7 @@ public class controlador implements ActionListener {
         vistaTableroJuego.getAvisoLlena().setText("");
 
         actualizarTablero();
-        modeloJuego.guardarJugadaEnArchivo(columna, modeloJuego.getNombreJugadorActual());
+        modeloJuego.guardarJugadaEnPila(columna, modeloJuego.getNombreJugadorActual());
 
         int ganadorId = modeloJuego.hayGanador();
 

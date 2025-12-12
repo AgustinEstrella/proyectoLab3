@@ -43,4 +43,14 @@ public class pila {
         return aux;
     }
 
+    public String imprimirPila(){
+      String texto = "";
+      nodo aux = frente;
+
+      while (aux != null) {
+          texto = texto + aux.info;
+          aux = aux.siguiente;
+      }
+      return texto;
+    }
 }

@@ -144,21 +144,22 @@ public class Modelo {
         }
     }
 
-    public void guardarJugadaEnArchivo(int columna, String jugador) {
+    public void guardarJugadaEnPila(int columna, String jugador) {
         try {
             columna = columna+1;
             String info = (jugador+ " posicionó ficha en la columna ->" +columna+ "<-"+"\n");
             log.insertar(info );
-            for (int i = 0; i < info.length(); i++) {
-                archivo.write((int) info.charAt(i));
-            }
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
         }
     }
 
     public void cerraryMostrarArchivo(String quienGano) {
         try {
+            String info = log.imprimirPila();
+            for (int i = 0; i < info.length(); i++) {
+                archivo.write((int) info.charAt(i));
+            }
             archivo.write(("El ganador es: "+quienGano+ "\n").getBytes());
             archivo.close(); //cierra la edicion del archivo
             Runtime.getRuntime().exec("notepad \"" + rutaArchivo + "\"");
