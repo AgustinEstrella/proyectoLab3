@@ -53,7 +53,7 @@ public class controlador implements ActionListener {
 
                     vistaTableroJuego.getInfoTurno().setText(modeloJuego.getJugadorActual());
 
-                    agregarListenerColumnas();
+                    agregarListenerColumnasYHacerMovimiento();
 
                 });
                 timer.setRepeats(false);
@@ -66,7 +66,7 @@ public class controlador implements ActionListener {
         }
     }
 
-    public void agregarListenerColumnas() {
+    public void agregarListenerColumnasYHacerMovimiento() {
         for (int i = 0; i < vistaTableroJuego.getBotonesColumna().length; ++i) {
             int columna = i;
             vistaTableroJuego.getBotonesColumna()[i].addActionListener(ev -> {

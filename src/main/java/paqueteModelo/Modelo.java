@@ -17,7 +17,6 @@ public class Modelo {
     private int[][] tablero = new int[6][7];
 
     private ArrayList<jugador> jugadores = new ArrayList();
-    private ArrayList<int[]> coordenadasGanadoras = new ArrayList();
 
     public void crearJugadores(String nombre1, String nombre2) {
         //if (nombre1.equalsIgnoreCase(nombre2)){
@@ -70,50 +69,48 @@ public class Modelo {
     }
 
     //metodos de verificacion de resultados
-    public ArrayList<int[]> getCoordenadasGanadoras() {
-        return coordenadasGanadoras;
-    }
+    private ArrayList<int[]> coordenadasGanadoras = new ArrayList();
 
     public int hayGanador() {
-        this.coordenadasGanadoras.clear();
+        coordenadasGanadoras.clear();
 
         for (int fila = 0; fila < 6; ++fila) {
             for (int columna = 0; columna < 7; ++columna) {
-                int ficha = this.tablero[fila][columna];
+                int ficha = tablero[fila][columna];
                 if (ficha != 0) {
                     //HORIZONTAL
-                    if (columna <= 3 && ficha == this.tablero[fila][columna + 1] && ficha == this.tablero[fila][columna + 2] && ficha == this.tablero[fila][columna + 3]) {
-                        this.coordenadasGanadoras.add(new int[]{fila, columna});
-                        this.coordenadasGanadoras.add(new int[]{fila, columna + 1});
-                        this.coordenadasGanadoras.add(new int[]{fila, columna + 2});
-                        this.coordenadasGanadoras.add(new int[]{fila, columna + 3});
+                    if (columna <= 3 && ficha == tablero[fila][columna + 1] && ficha == tablero[fila][columna + 2] && ficha == tablero[fila][columna + 3]) {
+                        coordenadasGanadoras.add(new int[]{fila, columna});
+                        coordenadasGanadoras.add(new int[]{fila, columna + 1});
+                        coordenadasGanadoras.add(new int[]{fila, columna + 2});
+                        coordenadasGanadoras.add(new int[]{fila, columna + 3});
                         return ficha;
                     }
 
                     //VERTICAL
-                    if (fila <= 2 && ficha == this.tablero[fila + 1][columna] && ficha == this.tablero[fila + 2][columna] && ficha == this.tablero[fila + 3][columna]) {
-                        this.coordenadasGanadoras.add(new int[]{fila, columna});
-                        this.coordenadasGanadoras.add(new int[]{fila + 1, columna});
-                        this.coordenadasGanadoras.add(new int[]{fila + 2, columna});
-                        this.coordenadasGanadoras.add(new int[]{fila + 3, columna});
+                    if (fila <= 2 && ficha == tablero[fila + 1][columna] && ficha == tablero[fila + 2][columna] && ficha == tablero[fila + 3][columna]) {
+                        coordenadasGanadoras.add(new int[]{fila, columna});
+                        coordenadasGanadoras.add(new int[]{fila + 1, columna});
+                        coordenadasGanadoras.add(new int[]{fila + 2, columna});
+                        coordenadasGanadoras.add(new int[]{fila + 3, columna});
                         return ficha;
                     }
 
                     //DIAGONAL ABAJO DERECHA
-                    if (fila <= 2 && columna <= 3 && ficha == this.tablero[fila + 1][columna + 1] && ficha == this.tablero[fila + 2][columna + 2] && ficha == this.tablero[fila + 3][columna + 3]) {
-                        this.coordenadasGanadoras.add(new int[]{fila, columna});
-                        this.coordenadasGanadoras.add(new int[]{fila + 1, columna + 1});
-                        this.coordenadasGanadoras.add(new int[]{fila + 2, columna + 2});
-                        this.coordenadasGanadoras.add(new int[]{fila + 3, columna + 3});
+                    if (fila <= 2 && columna <= 3 && ficha == tablero[fila + 1][columna + 1] && ficha == tablero[fila + 2][columna + 2] && ficha == tablero[fila + 3][columna + 3]) {
+                        coordenadasGanadoras.add(new int[]{fila, columna});
+                        coordenadasGanadoras.add(new int[]{fila + 1, columna + 1});
+                        coordenadasGanadoras.add(new int[]{fila + 2, columna + 2});
+                        coordenadasGanadoras.add(new int[]{fila + 3, columna + 3});
                         return ficha;
                     }
 
                     //DIAGONAL ARRIBA DERECHA
-                    if (fila >= 3 && columna <= 3 && ficha == this.tablero[fila - 1][columna + 1] && ficha == this.tablero[fila - 2][columna + 2] && ficha == this.tablero[fila - 3][columna + 3]) {
-                        this.coordenadasGanadoras.add(new int[]{fila, columna});
-                        this.coordenadasGanadoras.add(new int[]{fila - 1, columna + 1});
-                        this.coordenadasGanadoras.add(new int[]{fila - 2, columna + 2});
-                        this.coordenadasGanadoras.add(new int[]{fila - 3, columna + 3});
+                    if (fila >= 3 && columna <= 3 && ficha == tablero[fila - 1][columna + 1] && ficha == tablero[fila - 2][columna + 2] && ficha == tablero[fila - 3][columna + 3]) {
+                        coordenadasGanadoras.add(new int[]{fila, columna});
+                        coordenadasGanadoras.add(new int[]{fila - 1, columna + 1});
+                        coordenadasGanadoras.add(new int[]{fila - 2, columna + 2});
+                        coordenadasGanadoras.add(new int[]{fila - 3, columna + 3});
                         return ficha;
                     }
                 }
@@ -123,6 +120,11 @@ public class Modelo {
         return 0;
     }
 
+    public ArrayList<int[]> getCoordenadasGanadoras() {
+        return coordenadasGanadoras;
+    }
+
+
     public boolean tableroLleno() {
         return contadorTurnos >= 42;
     }
@@ -130,15 +132,13 @@ public class Modelo {
     //metodos manejo archivos
     pila log = new pila();
     private FileOutputStream archivo;
-    private String rutaArchivo;
 
     String fecha = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss"));
     String nombreArchivo = "LogPartida" +fecha+".txt";
 
     public void crearArchivoPartida() {
         try {
-            rutaArchivo = nombreArchivo;
-            archivo = new FileOutputStream(rutaArchivo, true);
+            archivo = new FileOutputStream(nombreArchivo, true);
         } catch (IOException e) {
             System.err.println("Error: " + e.getMessage());
         }
@@ -162,7 +162,7 @@ public class Modelo {
             }
             archivo.write(("El ganador es: "+quienGano+ "\n").getBytes());
             archivo.close(); //cierra la edicion del archivo
-            Runtime.getRuntime().exec("notepad \"" + rutaArchivo + "\"");
+            Runtime.getRuntime().exec("notepad \"" + nombreArchivo + "\"");
         } catch (IOException e) {
             System.err.println("Error: " + e.getMessage());
         }

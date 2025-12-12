@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc33f798-95e7-4930-8915-8bd1cf54c1d1" name="Changes" comment="Cambios pequeños">
+    <list default="true" id="cc33f798-95e7-4930-8915-8bd1cf54c1d1" name="Changes" comment="Correcto funcionamiento de pila y terminado">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/paqueteControlador/controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteControlador/controlador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/paqueteModelo/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteModelo/Modelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/paqueteModelo/pila.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/paqueteModelo/pila.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765234529518</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Correcto funcionamiento de pila y terminado">
+      <option name="closed" value="true" />
+      <created>1765498285119</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1765498285119</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,7 +204,8 @@
     <MESSAGE value="Hice una vez mas el tablero, esta vez mas ordenado y cargado a un arreglo en la vista" />
     <MESSAGE value="Logica y vista terminada, solo falta implementar manejo de archivos" />
     <MESSAGE value="Cambios pequeños" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambios pequeños" />
+    <MESSAGE value="Correcto funcionamiento de pila y terminado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correcto funcionamiento de pila y terminado" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
